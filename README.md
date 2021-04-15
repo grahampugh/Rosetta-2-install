@@ -6,7 +6,7 @@ If you have `munkipkg` installed and available at `/usr/local/bin/munkipkg`, use
 If you have `sign_pkg.py` available at `../jamf-upload/sign_pkg.py`, use `make; make sign` to make a signed package.
 
 ## Use in Jamf Pro
-You can add this package to a policy that is scoped this to **all computers**, because the script will do nothing if Rosetta is already installed, or when run on an Intel device.
+You can add this script or package to a policy that is scoped this to **all computers**, because the script will do nothing if Rosetta is already installed, or when run on an Intel device.
 
 It is recommended to target at **Enrollment Complete** and **Recurring Check-in**, **Once per Computer**. 
 
