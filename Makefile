@@ -1,6 +1,7 @@
 CURDIR := $(shell pwd)
 MUNKIPKG := /usr/local/bin/munkipkg
 PKG_SIGN := $(CURDIR)/../jamf-upload/sign_pkg.py
+DEV_ID := 9Z623UDZ5L
 PYTHON_PATH := /usr/local/autopkg/python
 SCRIPTS := $(CURDIR)/pkg/Rosetta-2-install/scripts
 PKG_BUILD := $(CURDIR)/pkg/Rosetta-2-install/build
@@ -33,4 +34,5 @@ clean :
 sign:
 	@echo "Signing the package"
 	rm $(CURDIR)/pkg/Rosetta-2-install/build/*.signed.pkg ||:
-	${PYTHON_PATH} ${PKG_SIGN} -v $(CURDIR)/pkg/Rosetta-2-install/build/*.pkg
+	${PYTHON_PATH} ${PKG_SIGN} --developer $(DEV_ID) $(CURDIR)/pkg/Rosetta-2-install/build/*.pkg
+	open $(CURDIR)/pkg/Rosetta-2-install/build
